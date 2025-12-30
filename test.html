@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://unpkg.com/lodash@4.17.21/lodash.min.js"></script>
+</head>
+
+<body>
+
+
+  <button type="button" onclick="debounceTest()">
+    点击我(debounceTest)
+  </button>
+
+  <script>
+    function execFn() {
+      console.log('execFn')
+    }
+
+    const debounceFn = _.debounce(execFn, 300, {
+      leading: true,
+      trailing: true,
+      maxWait: 700,
+    })
+
+    function debounceTest() {
+      debounceFn()
+      setTimeout(() => {
+        console.log('200 after')
+        debounceFn()
+      }, 200)
+
+      setTimeout(() => {
+        console.log('400 after')
+        debounceFn()
+      }, 400)
+
+      setTimeout(() => {
+        console.log('600 after')
+        debounceFn()
+      }, 600)
+
+      setTimeout(() => {
+        console.log('700 after')
+        debounceFn()
+      }, 700)
+
+      setTimeout(() => {
+        console.log('1000 after')
+        debounceFn()
+      }, 1000)
+    }
+
+  </script>
+
+  <button type="button" onclick="throttleTest()">
+    点击我(throttleTest)
+  </button>
+
+
+  <script>
+    function execFn() {
+      console.log('execFn')
+    }
+    const throttleFn = _.throttle(execFn, 500, {
+      leading: true, // 0ms 执行，200ms 被忽略。
+      trailing: false, // 0ms 执行，200ms 的调用延迟到 500ms 执行。
+    })
+    function throttleTest() {
+      throttleFn()
+      setTimeout(() => {
+        console.log('200 after')
+        throttleFn()
+      }, 200)
+    }
+
+  </script>
+
+
+
+</body>
+
+</html>

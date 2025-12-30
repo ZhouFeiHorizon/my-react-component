@@ -1,0 +1,13 @@
+{
+  "name": "my-react-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "pnpm run "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

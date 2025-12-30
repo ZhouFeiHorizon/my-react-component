@@ -1,0 +1,23 @@
+.webcast-item-render-dateRange {
+  &-separate {
+    margin: 0 4px;
+  }
+
+  &-vertical {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: row;
+    &:first-child {
+      margin-bottom: 8px;
+    }
+    .tag {
+      background-color: rgba(var(--semi-grey-5), 0.15);
+      color: rgba(var(--semi-grey-8), 1);
+      margin-right: 4px;
+    }
+  }
+}
